@@ -1,0 +1,73 @@
+################################################################################
+# C++
+################################################################################
+
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+################################################################################
+# JUCE
+################################################################################
+
+# Builds and CMake
+build/*
+!build/version.json.in
+pipelines/packaging/mac/*
+!pipelines/packaging/mac/background.png
+!pipelines/packaging/mac/synx.pkgproj
+!pipelines/packaging/mac/*.html
+!pipelines/packaging/mac/*.txt
+pipelines/bin
+pipelines/*.zip
+pipelines/*.app
+
+################################################################################
+# Tests
+################################################################################
+
+tests/synx.rpp
+
+################################################################################
+# IDEs
+################################################################################
+
+.vscode/*
+!.vscode/launch.json
+!.vscode/tasks.json
+
+################################################################################
+# Misc
+################################################################################
+
+.DS_Store
+notes/*
