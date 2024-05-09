@@ -1,0 +1,27 @@
+name: Integration Pipeline
+on:
+  workflow_dispatch:
+  pull_request:
+    branches: [develop, main]
+
+concurrency:
+  group: build-${{ github.ref || github.run_id }}
+
+jobs:
+  integration_pipeline:
+    name: integration_pipeline
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: "build_and_copy.sh debug"
+        run: |
+          ./ci_cd/build_and_copy.sh debug
+        shell: bash
+
+      - name: "validate.sh"
+        run: |
+          ./ci_cd/validate.sh
+        shell: bash
